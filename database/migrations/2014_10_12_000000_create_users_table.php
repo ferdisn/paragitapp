@@ -14,13 +14,31 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
+            
             $table->uuid('id');
-            $table->string('name');
-            $table->string('email')->unique();
+            $table->string('firstName');
+            $table->string('middleName');
+            $table->string('lastName');
+            $table->integer('batchYear'); //batch Paragita
+            $table->date('birthDay');
+            $table->string('voiceType');
+            $table->string('email')->unique(); //as username
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
             $table->primary('id');
+            $table->foreign('voiceType')->references('codeName')->on('codes');
+
+            //reference ke fakultas dn jurusan pake sistem email kemarin, nullable
+            //univ, tahun fakultas, fakultas, jurusan, additional note
+
+            //reference ke alamat (rumah,kantor,kos) pake sistem email kemarin, nullable
+            //nama rumah, nama kantor, nama kos, alamat
+
+            //reference ke nomor telepon, WA, Telegram, email, 
+
+            //reference ke socmed, website
         });
     }
 
