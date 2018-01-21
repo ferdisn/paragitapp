@@ -12,7 +12,27 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+});
+
+Route::get('/index', function () {
+    return view('home');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::get('/no-sidebar', function () {
+    return view('no-sidebar');
+});
+
+Route::get('/left-sidebar', function () {
+    return view('left-sidebar');
+});
+
+Route::get('/right-sidebar', function () {
+    return view('right-sidebar');
 });
 
 /* Route::get('/', function () {
