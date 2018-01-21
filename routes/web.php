@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/* Route::get('/', function () {
+    return App\User::create([
+        'name' => 'Jane',
+        'email' => 'john@jane.com',
+        'password' => bcrypt('password'),
+    ]);
+}); */
