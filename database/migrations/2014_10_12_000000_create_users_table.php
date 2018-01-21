@@ -28,7 +28,6 @@ class CreateUsersTable extends Migration
             $table->timestamps();
 
             $table->primary('id');
-            $table->foreign('voiceType')->references('codeName')->on('codes');
 
             //reference ke fakultas dn jurusan pake sistem email kemarin, nullable
             //univ, tahun fakultas, fakultas, jurusan, additional note

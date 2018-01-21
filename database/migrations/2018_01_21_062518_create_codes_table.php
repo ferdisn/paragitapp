@@ -20,6 +20,10 @@ class CreateCodesTable extends Migration
             $table->timestamps();
             $table->primary('codeName');
         });
+
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreign('voiceType')->references('codeName')->on('codes');
+        });
     }
 
     /**
