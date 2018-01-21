@@ -35,9 +35,9 @@ class CreateUsersTable extends Migration
             //reference ke alamat (rumah,kantor,kos) pake sistem email kemarin, nullable
             //nama rumah, nama kantor, nama kos, alamat
 
-            //reference ke nomor telepon, WA, Telegram, email, 
+            //reference ke nomor telepon, WA, Telegram, email,  Line ??
 
-            //reference ke socmed, website
+            //reference ke socmed, website, ??
         });
     }
 
