@@ -58,26 +58,25 @@
                                 <p>Vestibulum diam quam, mollis at consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum. Morbi mattis elementum orci, nec dictum porta cursus justo. Quisque ultricies lorem in ligula condimentum, et egestas turpis sagittis. Cras ac nunc urna. Nullam eget lobortis purus. Phasellus vitae tortor non est placerat tristique. Sed id sem et massa ornare pellentesque. Maecenas pharetra porta accumsan. </p>
                                 <p>In vestibulum massa quis arcu lobortis tempus. Nam pretium arcu in odio vulputate luctus. Suspendisse euismod lorem eget lacinia fringilla. Sed sed felis justo. Nunc sodales elit in laoreet aliquam. Nam gravida, nisl sit amet iaculis porttitor, risus nisi rutrum metus, non hendrerit ipsum arcu tristique est.</p>
 
-                                @if(count($members) > 1)
-                                <table>
+                                @if(count($members) > 0)
+                                <table style="border: 1px solid black;">
                                         <thead>
-                                            <tr>
-                                                <th> id</th>
-                                                <th> name</th>
-                                                <th> last name  </th>
-                                                <th> email </th>
-                                                <th> phone</th>
-                                                <th> adddress </th>
+                                            <tr  style="border: 1px solid black;"></tr>
+                                                <th  style="border: 1px solid black;"> id</th>
+                                                <th  style="border: 1px solid black;"></th> name</th>
+                                                <th  style="border: 1px solid black;"> email </th>
+                                                <th  style="border: 1px solid black;"> year </th>
+                                                <th  style="border: 1px solid black;"> voiceType</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                              @foreach($members as $member)
                                               <tr>
-                                                  <td> {{$member->id}} </td>
-                                                  <td> {{$member->firstName}} {{$member->lastName}} {{$member->lastName}} </td>
-                                                  <td> {{$member->email}} </td>
-                                                  <td> {{$member->batchYear}} </td>
-                                                  <td> {{$member->voiceType}} </td>
+                                                  <td  style="border: 1px solid black;">{{$member->id}}</td>
+                                                  <td style="border: 1px solid black;">{{$member->firstName}} {{$member->middleName}} {{$member->lastName}}</td>
+                                                  <td style="border: 1px solid black;">{{$member->email}}</td>
+                                                  <td style="border: 1px solid black;">{{$member->batchYear}}</td>
+                                                  <td style="border: 1px solid black;">{{$member->voiceType}}</td>
                                               </tr>
                                              @endforeach                                             
                                        </tbody>
