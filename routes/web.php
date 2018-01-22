@@ -35,6 +35,9 @@ Route::get('/right-sidebar', function () {
     return view('right-sidebar');
 });
 
+Route::resources([
+    'member' => 'UserController'
+]);
 /* Route::get('/', function () {
     return App\User::create([
         'name' => 'Jane',
