@@ -60,26 +60,22 @@
 
                                 @if(count($members) > 0)
                                 <table style="border: 1px solid black;">
-                                        <thead>
                                             <tr  style="border: 1px solid black;"></tr>
-                                                <th  style="border: 1px solid black;"> id</th>
-                                                <th  style="border: 1px solid black;"></th> name</th>
+                                                <th  style="border: 1px solid black; display:none;"> id</th>
+                                                <th  style="border: 1px solid black;"> name</th>
                                                 <th  style="border: 1px solid black;"> email </th>
                                                 <th  style="border: 1px solid black;"> year </th>
                                                 <th  style="border: 1px solid black;"> voiceType</th>
                                             </tr>
-                                        </thead>
-                                        <tbody>
                                              @foreach($members as $member)
                                               <tr>
-                                                  <td  style="border: 1px solid black;">{{$member->id}}</td>
+                                                  <td  style="border: 1px solid black;display:none;">{{$member->id}}</td>
                                                   <td style="border: 1px solid black;">{{$member->firstName}} {{$member->middleName}} {{$member->lastName}}</td>
                                                   <td style="border: 1px solid black;">{{$member->email}}</td>
                                                   <td style="border: 1px solid black;">{{$member->batchYear}}</td>
                                                   <td style="border: 1px solid black;">{{$member->voiceType}}</td>
                                               </tr>
-                                             @endforeach                                             
-                                       </tbody>
+                                             @endforeach    
                                     </table>
                                     @else
                                     No data.
