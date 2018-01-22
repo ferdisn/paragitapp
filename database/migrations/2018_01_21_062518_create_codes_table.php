@@ -43,8 +43,18 @@ class CreateCodesTable extends Migration
                 $code->save();
                 $i++;
             }            
-        }       
+        }  
+        
+        $user = new App\User();
+        $user->firstName = 'Ferdi';
+        $user->lastName = 'Saptanera';
+        $user->batchYear = 2007;
+        $user->birthDay = '27-02-1990';
+        $user->voiceType = 'TENOR2';
+        $user->email = 'ferdi@paragita.com';
+        $user->password = 'password';
 
+        $user->save();
     }
 
     /**
