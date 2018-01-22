@@ -26,69 +26,24 @@ class CreateCodesTable extends Migration
             $table->foreign('voiceType')->references('codeName')->on('codes');
         });
 
-        DB::table('codes')->insert(array(
-            'codeGroup' => 'VOICE_TYPE',
-            'codeName' => 'SOPRANO1',
-            'sort' => 1,
-            'description' => ''
-        )
+        $initial_value = array(
+            'VOICE_TYPE' => ['SOPRANO1','SOPRANO2','ALTO1','ALTO2','TENOR1','TENOR2','BASS1','BASS2'],
+            'CONTACT_TYPE' => ['PHONE','EMAIL','SOCIAL_MEDIA','WEBSITE','MESSAGING']
     );
 
-    DB::table('codes')->insert(array(
-        'codeGroup' => 'VOICE_TYPE',
-        'codeName' => 'SOPRANO2',
-        'sort' => 2,
-        'description' => ''
-        )
-    );
-
-    DB::table('codes')->insert(array(
-        'codeGroup' => 'VOICE_TYPE',
-        'codeName' => 'ALTO1',
-        'sort' => 3,
-        'description' => ''
-        )
-    );
-
-    DB::table('codes')->insert(array(
-        'codeGroup' => 'VOICE_TYPE',
-        'codeName' => 'ALTO2',
-        'sort' => 4,
-        'description' => ''
-        )
-    );
-
-        DB::table('codes')->insert(array(
-            'codeGroup' => 'VOICE_TYPE',
-            'codeName' => 'TENOR1',
-            'sort' => 5,
-            'description' => ''
-        )
-    );
-
-    DB::table('codes')->insert(array(
-        'codeGroup' => 'VOICE_TYPE',
-        'codeName' => 'TENOR2',
-        'sort' => 6,
-        'description' => ''
-        )
-    );
-
-    DB::table('codes')->insert(array(
-        'codeGroup' => 'VOICE_TYPE',
-        'codeName' => 'BASS1',
-        'sort' => 7,
-        'description' => ''
-        )
-    );
-
-    DB::table('codes')->insert(array(
-    'codeGroup' => 'VOICE_TYPE',
-    'codeName' => 'BASS2',
-    'sort' => 8,
-    'description' => ''
-        )
-    );
+        foreach($initial_value as $key => $value) {
+            //$key = key($value);
+            $i = 1;
+            foreach($value as $element) {
+                $code = new App\Code();
+                $code->codeGroup = $key;
+                $code->codeName = $element;
+                $code->sort = $i;
+                $code->description = '';
+                $code->save();
+                $i++;
+            }            
+        }       
 
     }
 

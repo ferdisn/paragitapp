@@ -28,16 +28,6 @@ class CreateUsersTable extends Migration
             $table->timestamps();
 
             $table->primary('id');
-
-            //reference ke fakultas dn jurusan pake sistem email kemarin, nullable
-            //univ, tahun fakultas, fakultas, jurusan, additional note
-
-            //reference ke alamat (rumah,kantor,kos) pake sistem email kemarin, nullable
-            //nama rumah, nama kantor, nama kos, alamat
-
-            //reference ke nomor telepon, WA, Telegram, email,  Line ??
-
-            //reference ke socmed, website, ??
         });
     }
 

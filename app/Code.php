@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Code extends Model
 {
-    use Uuids;
-    //
+    protected $primaryKey = 'codeName';
+    public $incrementing = false;
+    protected $keyType = 'string';
 }
