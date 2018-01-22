@@ -54,32 +54,12 @@
                                 <header>
                                     <h3>Dolore Amet Consequat</h3>
                                 </header>
-                                <p>Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam quam, mollis at consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum. Morbi mattis elementum orci, nec dictum massa. Morbi eu faucibus massa. Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam.</p>
-                                <p>Vestibulum diam quam, mollis at consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum. Morbi mattis elementum orci, nec dictum porta cursus justo. Quisque ultricies lorem in ligula condimentum, et egestas turpis sagittis. Cras ac nunc urna. Nullam eget lobortis purus. Phasellus vitae tortor non est placerat tristique. Sed id sem et massa ornare pellentesque. Maecenas pharetra porta accumsan. </p>
-                                <p>In vestibulum massa quis arcu lobortis tempus. Nam pretium arcu in odio vulputate luctus. Suspendisse euismod lorem eget lacinia fringilla. Sed sed felis justo. Nunc sodales elit in laoreet aliquam. Nam gravida, nisl sit amet iaculis porttitor, risus nisi rutrum metus, non hendrerit ipsum arcu tristique est.</p>
 
-                                @if(count($members) > 0)
-                                <table style="border: 1px solid black;">
-                                            <tr  style="border: 1px solid black;"></tr>
-                                                <th  style="border: 1px solid black; display:none;"> id</th>
-                                                <th  style="border: 1px solid black;"> name</th>
-                                                <th  style="border: 1px solid black;"> email </th>
-                                                <th  style="border: 1px solid black;"> year </th>
-                                                <th  style="border: 1px solid black;"> voiceType</th>
-                                            </tr>
-                                             @foreach($members as $member)
-                                              <tr>
-                                                  <td  style="border: 1px solid black;display:none;">{{$member->id}}</td>
-                                                  <td style="border: 1px solid black;"><a href="{{ config('app.url') }}/member/{{$member->id}}">{{$member->firstName}} {{$member->middleName}} {{$member->lastName}}</a></td>
-                                                  <td style="border: 1px solid black;">{{$member->email}}</td>
-                                                  <td style="border: 1px solid black;">{{$member->batchYear}}</td>
-                                                  <td style="border: 1px solid black;">{{$member->voiceType}}</td>
-                                              </tr>
-                                             @endforeach    
-                                    </table>
-                                    @else
-                                    No data.
-                                    @endif
+                                <p>ID : {{$member->id}}</p>
+                                <p>Name : {{$member->firstName}} {{$member->middleName}} {{$member->lastName}}</p>
+                                <p>Email : {{$member->email}}</p>
+                                <p>Year : {{$member->batchYear}}</p>
+                                <p>Voice : {{$member->voiceType}}</p>
                             </section>
                         </div>
 

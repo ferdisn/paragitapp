@@ -46,8 +46,15 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
+    {   
+        try {
+            $user = User::find($id);
+            return view('member.single')->with('member',$user);
+        }
+        catch (\Illuminate\Database\QueryException $e) {
+            return abort('404');
+        }
+            
     }
 
     /**
